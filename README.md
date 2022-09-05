@@ -1,6 +1,4 @@
 # Portfolio
-Presentation of all important projects I have worked on so far
-
 # [Project 1: Scrabble Development (Java)](https://github.com/Maxim020/ProjectGame)
 - Created a Java application of the game Scrabble with focus on the back end
 - Establishing of Server Client Communication with sockets
@@ -15,4 +13,4 @@ This is a program about the well known snake game. The only difference is, that 
 - Implemented timers for the "color effect" and invulnerability.
 - Made it possible to restart the game in the end screen
 
-<img src="https://github.com/yasinfahmy/Portfolio/blob/main/images/ScrabbleBoard.JPG" width="194" height="256" />
+<img src="https://github.com/yasinfahmy/Portfolio/blob/main/images/SnakeOnSteroids.png" />
