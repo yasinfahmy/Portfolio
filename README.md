@@ -8,3 +8,5 @@ Presentation of all important projects I have worked on so far
 - Playable on a Textual User Interface (TUI) within the IDE 
 - JUNIT Testing
 - Final Grade: 10/10
+
+![](https://github.com/yasinfahmy/Portfolio/blob/main/images/Scrabble.JPG)
