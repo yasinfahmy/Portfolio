@@ -1,4 +1,5 @@
 # Portfolio
+Projects I am proud of
 # [Project 1: Scrabble Development (Java)](https://github.com/Maxim020/ProjectGame)
 - Created a Java application of the game Scrabble with focus on the back end
 - Establishing of Server Client Communication with sockets
