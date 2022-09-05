@@ -7,4 +7,4 @@ Presentation of all important projects I have worked on so far
 - Application of the Model–View–Controller (MVC) Pattern
 - Playable on a Textual User Interface (TUI) within the IDE
 
-<img src="https://github.com/yasinfahmy/Portfolio/blob/main/images/ScrabbleBoard.JPG" width="691" height="414" />
+<img src="https://github.com/yasinfahmy/Portfolio/blob/main/images/ScrabbleBoard.JPG" width="277" height="366" />
