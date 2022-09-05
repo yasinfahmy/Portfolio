@@ -1,7 +1,7 @@
 # Portfolio
 Presentation of all important projects I have worked on so far
 
-# [Project 1: Scrabble Java Backend Development](https://github.com/Maxim020/ProjectGame)
+# [Project 1: Scrabble Development (Java)](https://github.com/Maxim020/ProjectGame)
 - Created a Java application of the game Scrabble with focus on the back end
 - Establishing of Server Client Communication with sockets
 - Application of the Model–View–Controller (MVC) Pattern
