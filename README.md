@@ -1,7 +1,10 @@
 # Portfolio
 Presentation of all important projects I have worked on so far
 
-# Project 1: Example
-* Line 1 ...
-* Line 2 ...
-* Line 3 ...
+## Project 1: Scrabble Backend Development
+- Created a Java application of the game Scrabble with focus on the back end
+- Establishing of Server Client Communication with sockets
+- Application of the Model–View–Controller (MVC) Pattern
+- Playable on a Textual User Interface (TUI) within the IDE 
+- JUNIT Testing
+- Final Grade: 10/10
