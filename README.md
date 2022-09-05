@@ -6,7 +6,5 @@ Presentation of all important projects I have worked on so far
 - Establishing of Server Client Communication with sockets
 - Application of the Model–View–Controller (MVC) Pattern
 - Playable on a Textual User Interface (TUI) within the IDE 
-- JUNIT Testing
-- Final Grade: 10/10
 
-![](https://github.com/yasinfahmy/Portfolio/blob/main/images/Scrabble.JPG)
+![alt text](https://github.com/yasinfahmy/Portfolio/blob/main/images/Scrabble.JPG)
