@@ -4,7 +4,7 @@ This is the final project of the Power BI online course. The data and guidance w
 - Better understanding of sales
 - See month on month performance
 - Comparing Currencies
-- Filterable by: User, Currency, Sales Territory, Month or Time Interval
+- Filterable by: User, Currency, Sales Territory, Month or Time Intervals
 
 <img src="./images/PowerBILogo.png" width="194" height="194" />
 
