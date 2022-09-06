@@ -2,10 +2,11 @@
 # [Project 1: Sales Team Dashboard (Power BI)](https://github.com/yasinfahmy/Sales-Team-Dashboard)
 This is the final project of the Power BI online course. The data and guidance was provided by 365DataScience.
 - Better understanding of sales
-- vSee month on month performance
-- bComparing Currencies
-- Filterable by: User, Currency, Sales Territory, Month or Timeinterval
+- See month on month performance
+- Comparing Currencies
+- Filterable by: User, Currency, Sales Territory, Month or Time Interval
 
+<img src="./images/PowerBI.png" />
 
 # [Project 2: Scrabble Development (Java)](https://github.com/Maxim020/ProjectGame)
 This project was part of the second module of the Business & IT Programm at the University of Twente.
