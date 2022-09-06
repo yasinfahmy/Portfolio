@@ -1,5 +1,6 @@
 # Portfolio
 # [Project 1: Scrabble Development (Java)](https://github.com/Maxim020/ProjectGame)
+This project was part of the second module of the Business & IT Programm at the University of Twente.
 - Created a Java application of the game Scrabble with focus on the back end
 - Establishing of Server Client Communication with sockets
 - Application of the Model–View–Controller (MVC) Pattern
