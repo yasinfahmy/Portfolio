@@ -5,7 +5,7 @@
 - Application of the Model–View–Controller (MVC) Pattern
 - Playable on a Textual User Interface (TUI) within the IDE
 
-<img src="https://github.com/yasinfahmy/Portfolio/blob/main/images/ScrabbleBoard.JPG" width="194" height="256" />
+<img src="https://github.com/yasinfahmy/Portfolio/blob/main/images/ScrabbleBoard.JPG" width="194" height="194" />
 
 # [Project 2: Snake On Steroids (Java)](https://github.com/yasinfahmy/Snake-On-Steroids)
 This is a program about the well known snake game. The only difference is, that there is always a chance of a golden apple spawning. When eating it, the snake becomes immortal and can not collide with itself nor the borders.
