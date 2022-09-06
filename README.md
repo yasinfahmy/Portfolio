@@ -14,4 +14,4 @@ This is a program about the well known snake game. The only difference is, that 
 - Implemented timers for the "color effect" and invulnerability
 - Made it possible to restart the game in the end screen
 
-<img src="https://github.com/yasinfahmy/Portfolio/blob/main/images/SnakeOnSteroids.png" width="194" height="254"/>
+![](https://github.com/yasinfahmy/Portfolio/blob/main/images/SnakeOnSteroids.png)
