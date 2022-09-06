@@ -6,7 +6,7 @@ This is the final project of the Power BI online course. The data and guidance w
 - Comparing Currencies
 - Filterable by: User, Currency, Sales Territory, Month or Time Interval
 
-<img src="./images/PowerBI.png" width="194" height="194" />
+<img src="./images/PowerBILogo.png" width="194" height="194" />
 
 # [Project 2: Scrabble Development (Java)](https://github.com/Maxim020/ProjectGame)
 This project was part of the second module of the Business & IT Programm at the University of Twente.
