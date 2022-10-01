@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Real Estate Price Prediction</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <section id="header">
+        <p>
+        <h1>Real Estate Price Prediction</h1>
+        </ul>
+        </div>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="main style1">
+        <div class="container">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-14"></div>
+                <div class="col-2"></div>
+            </div>
+            <header class="major"><h2>Introduction</h2></header>
+            <p>This year's data science week was a very fun learning experience, since I got to improve my data analysis 
+                and wrangling skills. The datathon was my first hands-on data science project with the goal of trying to 
+                predict real estate prices through linear regression and gradient boosting. I partnered up with Elvin 
+                Khoirunnisa, a master student from Business IT and we managed to land on the third place of this competition.</p>
+
+            <div class="row gtr-150">
+                <div class="col-4 col-12-medium">
+                    <span class="image fit"><img src="images/IMG-20220926-WA0010.jpg" alt="" /></span>
+                </div>
+                <div class="col-4 col-12-medium">
+                    <span class="image fit"><img src="images/IMG-20220926-WA0009.jpg" alt="" /></span>
+                </div>
+            </div>
+            
+            <header class="major"><h2>Exploratory Data Analysis (EDA)</h2></header>
+            <p>This dataset had 81 columns, so a lot of variables to consider. First we looked into the data types and found 
+                43 strings, 35 integer and 3 float columns. Then, we took a brief look at missing values of the data, to get
+                 an overview. By analyzing the distribution and correlation of numerical variables, we made a correlation 
+                 matrix with the most important numerical variables to understand the key drivers of the sale price. </p>
+
+            <span class="image fit"><img src="images/corr_matrix.png" alt="" /></span>
+
+            <header class="major"><h2>Data Wrangling</h2></header>
+            <p>All the steps on the train set were also applied on the test data set.</p>
+            <h3>Handling Mising Values</h3></header>
+            <p>We noticed that there are 3 numerical columns with missing values, namely MasVnrArea, GarageYrBlt, LotFrontage. 
+                In order to find an appropriate statistic to fill in all nan values, we plotted the distribution of them. </p>
+            
+            <span class="image fit"><img src="images/num_missing.png" alt="" /></span>
+           
+            <p>We decided to take the median for LotFrontage and MasVnrArea and the mode for GarageYrBlt.</p>
+            <p>For categorical variables, we replaced the nan values with their actual information. For example houses that do not 
+                have a garage, have missing values in those columns. In that case, we imputed the nan value with 'No garage'.</p> 
+
+            <h3>Numerical Feature Selection</h3></header>
+
+
+            <p>Each numerical variable was assessed and there were four ways on how to deal with them. Some of the numerical 
+                variables had outliers, which we removed, in order to improve the performance of the model. Some were falsely 
+                classified as integers, so we converted them to string, others had so many '0', so we decided to drop these columns. 
+                There were of course also numerical variables, which were totally fine. </p>
+            <div class="row gtr-150">
+                <div class="col-4 col-12-medium">
+                    <span class="image fit"><img src="images/LotAreaOutliers.png" alt="" /></span>
+                </div>
+                <div class="col-4 col-12-medium">
+                    <span class="image fit"><img src="images/LotArea.png" alt="" /></span>
+                </div>
+            </div>
+
+            <h3>Log Transformation</h3></header>
+            <p>There was the idea to apply log transformation on some of the variables, because some numerical features were 
+                suitable for that. In that week, we did not have time to do this, so this will be something for a later point in time. </p>
+            <span class="image fit"><img src="images/LogTransformation.png" alt="" /></span>
+
+            <header class="major"><h2>Model Building and Accuracy</h2></header>
+            <p>First we declared the dependent and independent variables of the training set. Afterwards, the inputs of the training 
+                and test data set were concatenated to generate the dummy variables and standardize all features. We then splitted the 
+                training set into train and validation data with their respective inputs and target values. As a machine learning model, 
+                we took linear regression with gradient boost, a model that consists of many weak learners that make its predictive 
+                power very high. </p>
+
+            <span class="image left"><img src="images/real_estate_price.png" alt="" /></span>
+            <p>Train RMSE: 18502<br>
+                Test RMSE: 22332</p>
+            <p>Train R-squared:  0.924<br>
+                Test R-squared:  0.889</p>
+            <p>Train adjusted R-squared: 0.92<br>
+                Test adjusted R-squared: 0.9</p>
+
+            <p><br><i>Code and Resources Used:<br>
+                Python Version: 3.9.12<br>
+                Packages: pandas, numpy, sklearn, matplotlib, seaborn, xgboost, statsmodel</i>
+            </p>
+            
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+        <ul class="icons">
+            <li><a href="https://www.linkedin.com/in/yasinfahmy/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://github.com/yasinfahmy" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="mailto:yasin.21.fahmy@gmail.com" target="_blank" rel="noopener noreferrer" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; Yasin Fahmy</li>
+        </ul>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
