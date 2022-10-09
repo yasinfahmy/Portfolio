@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Expat Survey Data</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <section id="header">
+        <p>
+        <h1>Expat Survey Data</h1>
+        </ul>
+        </div>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="main style1">
+        <div class="container">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-14"></div>
+                <div class="col-2"></div>
+            </div>
+            <header class="major"><h2>Introduction</h2></header>
+            <p>After reaching out to InterNations to clarify the use of their copyright protected contents, contained in the 
+                expat insider report of 2022, I received the concrete permission to use any data in their report for the purpose 
+                of building a tool that will give the user a list of recommended countries to live in, based on the selected criterias.</p>
+
+            <span class="image fit"><img src="images/InterNations.png" alt="" /></span>
+
+            <header class="major"><h2>Importing Data</h2></header>
+            <p>Since the function to copy contents from the pdf was disabled, I used an online tool to extract the textual information from 
+                the PDF. After importing all the data into a structured form in Excel I checked if there are any misspelled countries by 
+                putting all the data in one column,  applying the “Remove Duplicates Function” and optimally, there should be 52 distinct 
+                country names in total.</p>
+
+            <header class="major"><h2>Data Preperation</h2></header>
+
+            <span class="image right"><img src="images/Taiwan misspelling.JPG" alt="" /></span> 
+
+            <p>There were 53 distinct values in total. After looking through the values, I noticed that Taiwan was the only country misspelled. 
+                After correcting that one value, the data set is now cleaned.</p>
+
+            <p>Based on the textual information of the raw data, I gave every country a score for each criteria, based on its ranking, using 
+                the MATCH() function. Excluded the criterias “Quality of Life”, “Ease of Settling In”, “Working Abroad”, “Expat Essentials”, 
+                because these represent all of its subcategories together. Based on the newly created score table, I inserted a pivot table in 
+                the existing worksheet. Below there is a table containing the country as well as their respective sum of scores. </p>
+            
+            <span class="image fit"><img src="images/table1.JPG" alt="" /></span>
+
+            <header class="major"><h2>Creating the Dashboard</h2></header>
+            <p>The dashboard itself shows a map, visualizing the countries with high and low resonance to the selected criterias. Below, the 
+                best and worst 10-12 countries are listed with their overall score. The top and bottom values of the country score's list is 
+                extracted by using the MIN()/MAX(), as well as SMALL()/LARGE() function with an if condition inside. It checks whether a score 
+                is already shown in the list, because it happens that two countries will have the same score. In that special case both country 
+                names will be concatenated. This is made possible by using the TEXTJOIN() function, with, again, an if condition inside. </p>
+                
+            <span class="image fit"><img src="images/dashboard.JPG" alt="" /></span>
+                
+            <p>The criterias can be selected by the slicer to the left, which was formatted to fit the color schema in the excel file. Underneath 
+                the dashboard, a legend is shown, which further explains which factors were covered in each criteria. The disclaimer to the right,
+                gives further information on how to interpret and use tools, as well as more information by InterNations.</p>               
+            
+            <span class="image fit"><img src="images/legend_disclaimer.JPG" alt="" /></span>
+            
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+        <ul class="icons">
+            <li><a href="https://www.linkedin.com/in/yasinfahmy/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://github.com/yasinfahmy" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="mailto:yasin.21.fahmy@gmail.com" target="_blank" rel="noopener noreferrer" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; Yasin Fahmy</li>
+        </ul>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
