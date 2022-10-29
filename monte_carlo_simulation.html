@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Monte Carlo Simulation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <section id="header">
+        <p>
+        <h1>Monte Carlo Simulation</h1>
+        </ul>
+        </div>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="main style1">
+        <div class="container">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-14"></div>
+                <div class="col-2"></div>
+            </div>
+            
+            <header class="major"><h2>Introduction</h2></header>
+            <p>This tool was part of the research project of the Finance for Engineers module of the Business IT Bachelor programm. 
+                Additionally to this tool I developed, my teammates developed a simulation tool for a stock portfolio and discussed our 
+                research question of <i>“To what extent does a Monte Carlo Simulation help financial analysts assess possible portfolio and 
+                stock returns?”</i> in further detail. For more information about the report or the tools, please have a look in the 
+                Finance-For-Engineers repository on GitHub.</p>
+
+            <p>Monte Carlo Simulation is a technique to estimate the possible outcomes of an uncertain event. Based on the distribution of 
+                historical data, multiple simulations are run, which provide different outcomes of a future event. The probability of different 
+                outcomes is simulated, that can not be predicted due to the randomness of variables. In practice, the simulation assigns a random 
+                value to the variable that has uncertainty. Lastly, simulations can be run repeatedly to make up a representative sample of the 
+                infinite number of possible combinations.</p>
+
+            <header class="major"><h2>Mathematical Background</h2></header> 
+            <p>It is assumed that stock prices follow a random walk and that the weak form of the efficient market hypothesis is true, meaning that 
+                future returns are independent of past ones. The stochastic process of stock price development is memoryless, which is referred to as the Markov property.</p>
+            <span class="image right"><img src="images/Monte Carlo/price.JPG" alt="" /></span>
+            <p>The price of today is the price of yesterday times its daily return. Since log returns are used for the simulation, to get the real return, it is needed to 
+                calculate e to the power of the logarithmic return.</p>
+            <span class="image right"><img src="images/Monte Carlo/drift.JPG" alt="" /></span>
+            <p>Yesterday's stock price is known, but r is a random variable. The movement of a random variable that follows a Markov Stochastic Process can be described as 
+                the Wiener's Process or Brownian Motion. It allows us to model that randomness. It consists of the addition of two components, the drift (approximation of 
+                future expected daily return of stock) and stock's volatility (shock).</p>
+            <span class="image right"><img src="images/Monte Carlo/shock.JPG" alt="" /></span>
+            <p>Z corresponds to the distance between the data point and its mean within a standard normal distribution (Number of standard deviations), also referred to as 
+                the standard Brownian motion.</p>
+            <span class="image right"><img src="images/Monte Carlo/final_price.JPG" alt="" /></span>
+            <p>Based on the geometric Brownian motion, today's price will be:</p>
+
+            <header class="major"><h2>Algortihm Explanation</h2></header>
+            <P>After importing all the necessary libraries, the historical adjusted stock price data is fetched from yahoo.finance. After that, 
+                the data is transformed into logarithmic daily returns. Based on that, the mean and variance are calculated in order to determine 
+                the drift component. </P>
+            <p>To calculate the shock component, the standard deviation of the log returns is computed and multiplied with a data frame consisting 
+                of Z-values based on a random probability. The number of rows and columns in the data frame correspond to the number of days to 
+                simulate and iterations of the simulation, respectively. In order to get the actual daily returns, the log returns are converted back 
+                into arithmetic values, by taking all the values to the exponent of e (Euler's number).</p>                              
+            <p>A new data frame, with the same size is created, to simulate the prices. First, the first row is filled with the most recent stock price 
+                available. With the help of a loop the next price is calculated by multiplying the last price with the simulated daily return.</p>
+            <p>To showcase the lower and upper bounds of the confidence interval with 95% certainty, the returns were calculated in a similar way as for 
+                the simulations, but the shock component was not random this time. Instead the standard deviation was multiplied by +/- 1.96 to achieve 
+                the upper and lower bounds. For the expected return, each price is calculated by multiplying the precedent price point with the mean return.</p>
+            <p><b>Ford Stock Price Simulation</b></p>
+            <div class="row gtr-150">
+                <div class="col-4 col-12-medium">
+                    <span class="image fit"><img src="images/Monte Carlo/ford_price_data.JPG" alt="" /></span>
+                </div>
+                <div class="col-4 col-12-medium">
+                    <span class="image fit"><img src="images/Monte Carlo/ford_log_returns.JPG" alt="" /></span>
+                </div>
+                <div class="col-4 col-12-medium">
+                    <span class="image fit"><img src="images/Monte Carlo/ford_simulation.JPG" alt="" /></span>
+                </div>
+            </div>
+
+            <header class="major"><h2>Limitations and Assumptions</h2></header>
+            <p>Explaining the past is much easier than predicting the future. As briefly mentioned in the research question discussion, in spite of the confidence
+                 interval that was applied in the tool, the Monte Carlo simulation has limitations that can affect the accuracy of the results. These drawbacks 
+                 concern the fact that the simulation only considers past price data and does not take into account macro economical scenarios or black swan events. 
+                 When considering only price data, plenty of additional important variables which directly affect the stock price or portfolio are naturally ignored, 
+                 which may result in inaccurate estimations. </p>
+
+            <p>The simulation does not consider macro economical scenarios such as inflation, unemployment rate and industrial output which may correlate with the stock 
+                price. As for the confidence interval itself, It also has drawbacks, as the confidence interval will only be valid if the market will stay the same in the 
+                upcoming period, as it was during the time which the data was taken. For example, in case the data has been taken last year but in the upcoming future a 
+                recession will take place, the volatility will be higher for every stock (VIX index) than it was at the time that the data was taken, hence affecting the 
+                accuracy of prediction.</p> 
+
+            <p>Moreover, if the stock has experienced massive growth over the period, the data was fetched from, the simulation will assume steady growth for that stock 
+                and reflect unrealistic future scenarios. Therefore it is important to feed the algorithm a lot of data, from a long period, to account for this. For the 
+                simulation of Tesla for example, sometimes the simulated stock developments were so extreme that Tesla's stock would reach a stock price of thousands of 
+                dollars after a 1000 days period (current stock price: 225$, 27.10.2022). That is because Tesla has experienced extreme stock price growth since 2020. </p>
+
+            <p><b>Tesla Stock Price Simulation</b></p>    
+            <div class="row gtr-150">
+                <div class="col-4 col-12-medium">
+                    <span class="image fit"><img src="images/Monte Carlo/tesla_price_data.JPG" alt="" /></span>
+                </div>
+                <div class="col-4 col-12-medium">
+                    <span class="image fit"><img src="images/Monte Carlo/tesla_log_returns.JPG" alt="" /></span>
+                </div>
+                <div class="col-4 col-12-medium">
+                    <span class="image fit"><img src="images/Monte Carlo/tesla_simulation.JPG" alt="" /></span>
+                </div>
+            </div>
+            
+            <p>In theory, a Monte Carlo simulation is able to incorporate autocorrelations like inflation and non-normal stock returns, but the constraints are most often 
+                set by the creator of a Monte Carlo simulation tool, often due to missing or inaccurate data sources. If one decides to still take those factors into account, 
+                it is recommended to do that with proper care and choose high quality inputs, because the principle of “garbage in, garbage out” also applies in this case. </p>
+            
+            <p><b>Project Contributors: Valeri Andreev, Oren Arbiv, Yasin Fahmy, Oskar Fromm, Maxim Fraňo, Damon Kaewborisut</b></p>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+        <ul class="icons">
+            <li><a href="https://www.linkedin.com/in/yasinfahmy/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://github.com/yasinfahmy" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="mailto:yasin.21.fahmy@gmail.com" target="_blank" rel="noopener noreferrer" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; Yasin Fahmy</li>
+        </ul>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
