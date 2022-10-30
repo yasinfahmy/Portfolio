@@ -61,11 +61,11 @@
             <p>All the steps on the train set were also applied on the test data set.</p>
             <h3>Handling Mising Values</h3></header>
             <p>We noticed that there are 3 numerical columns with missing values, namely MasVnrArea, GarageYrBlt, LotFrontage. 
-                In order to find an appropriate statistic to fill in all nan values, we plotted the distribution of them. </p>
+                In order to find an appropriate statistic to fill in all nan values, we plotted the distribution of them. We 
+                decided to take the median for LotFrontage and MasVnrArea and the mode for GarageYrBlt.</p>
             
             <span class="image fit"><img src="images/num_missing.png" alt="" /></span>
            
-            <p>We decided to take the median for LotFrontage and MasVnrArea and the mode for GarageYrBlt.</p>
             <p>For categorical variables, we replaced the nan values with their actual information. For example houses that do not 
                 have a garage, have missing values in those columns. In that case, we imputed the nan value with 'No garage'.</p> 
 
@@ -103,9 +103,20 @@
             <p>Train R-squared:  0.924<br>
                 Test R-squared:  0.889</p>
             <p>Train adjusted R-squared: 0.92<br>
-                Test adjusted R-squared: 0.9</p>
+                Test adjusted R-squared: 0.9</p><br>
 
-            <p><br><i>Code and Resources Used:<br>
+            <header class="major"><h2>Conclusions</h2></header>
+            <p>At first we were very confident with our machine learning model, because it had a r-squared value of 0.889 on the validation set. 
+                When the results of others were published, we had a much lower r-squared and higher RMSE than expected. The reason for this is that 
+                there were some variables in the test set that were not taken into account by the ML model. We falsely assumed that the validation set 
+                has the same set of values for each variable as the train and test set.</p>
+            <p>To make things easier, we should have concatenated the train and test set before we started preprocessing, applying log transformation and 
+                aggregating values to a higher level to achieve more accurate results.</p>
+            <p>All in all, the data science week was a lot of fun and it gave me the first chance to get in touch and try out machine learning models. 
+                It was very interesting to find an ideal balance between under- and overfitting of the model and learning about different requirements 
+                for ML models when it comes down to its purpose (Datathon, Research, Industry application).</p>
+
+            <p><i>Code and Resources Used:<br>
                 Python Version: 3.9.12<br>
                 Packages: pandas, numpy, sklearn, matplotlib, seaborn, xgboost, statsmodel</i>
             </p>
