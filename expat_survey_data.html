@@ -39,7 +39,7 @@
                 expat insider report of 2022, I received the concrete permission to use any data in their report for the purpose 
                 of building a tool that will give the user a list of recommended countries to live in, based on the selected criteria.</p>
 
-            <span class="image fit"><img src="images/InterNations.png" alt="" /></span>
+            <span class="image fit"><img src="images/Expat Survey/InterNations.png" alt="" /></span>
 
             <header class="major"><h2>Importing Data</h2></header>
             <p>Since the function to copy contents from the pdf was disabled, I used an online tool to extract the textual information from 
@@ -49,7 +49,7 @@
 
             <header class="major"><h2>Data Preperation</h2></header>
 
-            <span class="image right"><img src="images/Taiwan misspelling.JPG" alt="" /></span> 
+            <span class="image right"><img src="images/Expat Survey/Taiwan misspelling.JPG" alt="" /></span> 
 
             <p>There were 53 distinct values in total. After looking through the values, I noticed that Taiwan was the only country misspelled. 
                 After correcting that one value, the data set is now cleaned.</p>
@@ -59,7 +59,7 @@
                 because these represent all of its subcategories together. Based on the newly created score table, I inserted a pivot table in 
                 the existing worksheet. Below there is a table containing the country as well as their respective sum of scores. </p>
             
-            <span class="image fit"><img src="images/table1.JPG" alt="" /></span>
+            <span class="image fit"><img src="images/Expat Survey/table1.JPG" alt="" /></span>
 
             <header class="major"><h2>Creating the Dashboard</h2></header>
             <p>The dashboard itself shows a map, visualizing the countries with high and low resonance to the selected criteria. Below, the 
@@ -68,13 +68,13 @@
                 is already shown in the list, because it happens that two countries will have the same score. In that special case both country 
                 names will be concatenated. This is made possible by using the TEXTJOIN() function, with, again, an if condition inside. </p>
                 
-            <span class="image fit"><img src="images/dashboard.JPG" alt="" /></span>
+            <span class="image fit"><img src="images/Expat Survey/dashboard.JPG" alt="" /></span>
                 
             <p>The criteria can be selected by the slicer to the left, which was formatted to fit the color schema in the excel file. Underneath 
                 the dashboard, a legend is shown, which further explains which factors were covered in each criteria. The disclaimer to the right,
                 gives further information on how to interpret and use tools, as well as more information by InterNations.</p>               
             
-            <span class="image fit"><img src="images/legend_disclaimer.JPG" alt="" /></span>
+            <span class="image fit"><img src="images/Expat Survey/legend_disclaimer.JPG" alt="" /></span>
             
         </div>
         </div>
